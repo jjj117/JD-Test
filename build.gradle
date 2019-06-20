@@ -3,10 +3,11 @@
 buildscript {
     repositories {
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
-        classpath 'com.jakewharton:butterknife-gradle-plugin:8.5.1'
+        classpath 'com.android.tools.build:gradle:3.3.1'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0-rc2'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -14,6 +15,8 @@ buildscript {
 
 allprojects {
     repositories {
+        mavenCentral()
+        google()
         jcenter()
         maven { url "https://jitpack.io"}
         maven {
@@ -29,14 +32,14 @@ task clean(type: Delete) {
 
 ext {
     // Sdk and tools
-    minSdkVersion = 12
+    minSdkVersion = 14
     targetSdkVersion = 25
-    compileSdkVersion = 25
-    buildToolsVersion = '25.0.2'
+    compileSdkVersion = 26
+    buildToolsVersion = '28.0.3'
 
     // App dependencies
-    supportLibraryVersion = '25.2.0'
-    constraintVersion = '1.0.0-beta5'
+    supportLibraryVersion = '26.1.0'
+    constraintVersion = '1.1.0'
     junitVersion = '4.12'
     retrofitVersion = '2.2.0'
     okhttpVersion = '3.6.0'
@@ -49,8 +52,12 @@ ext {
     daggerVersion = '2.9'
     butterKnifeVersion = '8.5.1'
     frescoVersion = '1.2.0'
-    arouterVersion = '1.2.0'
-    arouterCompilerVersion = '1.1.1'
+    arouterVersion = '1.4.1'
+    arouterCompilerVersion = '1.2.2'
     easypermissionVersion = '0.3.1'
     autoScrollViewPagerVersion = '2.1.7'
+
+    //控制模块是否参与编译
+    buildMain = true
+    buildTest = true
 }
